@@ -1,0 +1,78 @@
+html, body {
+    font-family: Arial;
+    height: 100%;
+    margin: 0%;
+}
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+}
+
+.side-menu {
+    display: flex;
+    float: left;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #3359DF;
+    flex-direction: column;
+    border-right: solid 1px black;
+}
+
+.profilepic {
+    padding-top: 5%;
+    text-align: center;
+}
+
+.profilepic img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+.profilepic p {
+    color: white;
+}
+
+.side-menu ul li {
+    padding: 20px;
+    margin-bottom: 6px;
+    color: white;
+    font-weight: 60;
+    border-left: solid 4px rgba(0, 0, 0, 0.1);
+    margin-left: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    list-style-type: none;
+}
+
+.side-menu ul li:hover {
+    border-left: solid 2px black;
+    color: black;
+}
+
+hr {
+    border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    width: 100%;
+    height: 90%;
+}
+
+.right {
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+
+.footer {
+    width: 70%;
+    float: right;
+}
+
+.footer p {
+    position: center;
+    margin-left: 20%;
+}
