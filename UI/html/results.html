@@ -27,30 +27,53 @@
       </div>
       <div class="right">
         <div class="content">
-          <div class="candidates">
-            <table id="candidates_info">
+          <div class="choose_office">
+            <form>
+                <select name="offices">
+                    <option value="office1">Office 1</option>
+                    <option value="office2">Office 2</option>
+                    <option value="office3">Office 3</option>
+                    <option value="office4">Office 4</option>
+                  </select>
+                  <button type="submit" class="view-result" />View Results</button>
+            </form>
+          </div>
+          <div class="results">
+            <h2>Office 1</h2>
+            <table id="results_info">
               <thead>
                 <tr>
-                  <th>Offices</th>
-                  <th>Candidates</th>
-                  <th>Vote</th>
+                  <th>Results</th>
+                  <th>Winner</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Office 1</td>
-                  <form class="vote">
-                    <td>
-                      <input type="radio" name="office1" value="sam" />Sam<br />
-                      <input type="radio" name="office1" value="jean" />Jean
-                      D'amour<br />
-                      <input
-                        type="radio"
-                        name="office1"
-                        value="christian"
-                      />Christian<br />
-                    </td>
-                  </form>
+                  <td>
+                    <table id="detailed_results">
+                      <tr>
+                        <th>candidates</th>
+                        <th>Number of votes</th>
+                        <th>Percentage (%)</th>
+                      </tr>
+                      <tr>
+                        <td>Sam</td>
+                        <td>2700</td>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <td>Jean D'AMOUR</td>
+                        <td>5000</td>
+                        <td>70</td>
+                      </tr>
+                      <tr>
+                        <td>Christian</td>
+                        <td>2000</td>
+                        <td>20</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>Jean D'amour</td>
                 </tr>
               </tbody>
             </table>
