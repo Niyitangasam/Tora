@@ -76,3 +76,15 @@ hr {
     position: center;
     margin-left: 20%;
 }
+
+
+
+/* Vote page css */
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+a:hover{
+    color: black;
+}
