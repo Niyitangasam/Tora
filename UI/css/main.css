@@ -277,7 +277,15 @@ a:hover {
 	background-color: #3359DF;
 	color: white;
 }
-
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
 .btn-edit {
 	color: #fff;
 	background-color: #5bc0de;
