@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="side-menu">
+        <div class="profilepic">
+          <img src="../assets/img/user.png" alt="Avatar" class="avatar" />
+          <p>MUHOZA Christelle</p>
+        </div>
+        <ul>
+          <li>Profile</li>
+          <li><a href="results.html">Results</a></li>
+          <li>Political offices</li>
+          <li>Political Parties</li>
+          <li><a href="vote.html">Vote now</a></li>
+          <hr />
+          <li>Sign Out</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="content">
+          <div class="choose_office">
+            <form>
+                <select name="offices">
+                    <option value="office1">Office 1</option>
+                    <option value="office2">Office 2</option>
+                    <option value="office3">Office 3</option>
+                    <option value="office4">Office 4</option>
+                  </select>
+                  <button type="submit" class="view-result" />View Results</button>
+            </form>
+          </div>
+          <div class="results">
+            <h2>Office 1</h2>
+            <table id="results_info">
+              <thead>
+                <tr>
+                  <th>Results</th>
+                  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <table id="detailed_results">
+                      <tr>
+                        <th>candidates</th>
+                        <th>Number of votes</th>
+                        <th>Percentage (%)</th>
+                      </tr>
+                      <tr>
+                        <td>Sam</td>
+                        <td>2700</td>
+                        <td>30</td>
+                      </tr>
+                      <tr>
+                        <td>Jean D'AMOUR</td>
+                        <td>5000</td>
+                        <td>70</td>
+                      </tr>
+                      <tr>
+                        <td>Christian</td>
+                        <td>2000</td>
+                        <td>20</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>Jean D'amour</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="footer">
+          <p>&copy; Copyright 2019 Riders</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
