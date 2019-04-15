@@ -277,16 +277,18 @@ a:hover {
 	background-color: #3359DF;
 	color: white;
 }
+
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
+	display: inline-block;
+	padding: 6px 12px;
 	font-size: 14px;
 	cursor: pointer;
-  font-weight: normal;
-  text-align: center;
-  border: 1px solid transparent;
-  border-radius: 4px;
+	font-weight: normal;
+	text-align: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }
+
 .btn-edit {
 	color: #fff;
 	background-color: #5bc0de;
@@ -301,7 +303,25 @@ a:hover {
 
 .pull-right {
 	float: right !important;
-  }
-  .pull-left {
+}
+
+.pull-left {
 	float: left !important;
-  }
+}
+
+.form-container {
+	margin: 0;
+	width: 60%;
+	margin-left: 20%;
+}
+
+.input-office {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	margin: 5px 0 15px 0;
+	display: inline-block;
+	border-radius: 4px;
+	font-size: 22px;
+	resize: vertical;
+}
