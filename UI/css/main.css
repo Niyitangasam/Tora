@@ -298,3 +298,10 @@ a:hover {
 	background-color: #d9534f;
 	border-color: #d43f3a;
 }
+
+.pull-right {
+	float: right !important;
+  }
+  .pull-left {
+	float: left !important;
+  }
