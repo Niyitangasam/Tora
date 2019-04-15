@@ -197,7 +197,7 @@ a:hover {
 	margin-top: 8%;
 }
 
-.parties {
+.row {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -299,7 +299,21 @@ a:hover {
 	color: #fff;
 	background-color: #d9534f;
 	border-color: #d43f3a;
+	margin-left: 10px;
 }
+
+.btn-edit:hover {
+	background-color: darkcyan;
+	color: white;
+	box-shadow: 2px 0px 4px black;
+}
+
+.btn-delete:hover {
+	background-color: darkred;
+	color: white;
+	box-shadow: 2px 0px 4px black;
+}
+
 
 .pull-right {
 	float: right !important;
@@ -325,3 +339,4 @@ a:hover {
 	font-size: 22px;
 	resize: vertical;
 }
+
