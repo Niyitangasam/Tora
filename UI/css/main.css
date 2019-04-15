@@ -121,6 +121,13 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 }
+#candidates_info th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #3359DF;
+	text-align: center;
+	color: white;
+}
 
 #results_info {
 	border-collapse: collapse;
