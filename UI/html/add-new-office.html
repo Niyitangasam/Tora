@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New political office</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="side-menu">
+            <div class="profilepic">
+                <img src="../assets/img/user.png" alt="Avatar" class="avatar" />
+                <p>MUHOZA Christelle</p>
+            </div>
+            <ul>
+                <li>Profile</li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="offices.html">Plitical offices</a></li>
+                <li>Political Parties</li>
+                <li><a href="vote.html">Vote now</a></li>
+                <hr />
+                <li>Sign Out</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="content">
+                <div class="office-container">
+                    <h2 class="text-center">Add new political office</h2>
+                    <form class="form-container">
+                        <label for="office-name">Office name</label>
+                        <input class="input-office" type="text" id="office-name" name="office-name">
+                        <label for="office-type">Office type</label>
+                        <select name="office-type" id="office-type" class="input-office">
+                            <option value="">--Select office type--</option>
+                            <option value="state">State</option>
+                            <option value="government">Government</option>
+                            <option value="local">Local</option>
+                            <option value="federal">Federal</option>
+                        </select>
+                        <button class="button btn pull-right" name="save-new-office">Save new</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; Copyright 2019 Riders</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
