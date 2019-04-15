@@ -313,3 +313,30 @@ a:hover {
 	color: white;
 	box-shadow: 2px 0px 4px black;
 }
+
+
+.pull-right {
+	float: right !important;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.form-container {
+	margin: 0;
+	width: 60%;
+	margin-left: 20%;
+}
+
+.input-office {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	margin: 5px 0 15px 0;
+	display: inline-block;
+	border-radius: 4px;
+	font-size: 22px;
+	resize: vertical;
+}
+
