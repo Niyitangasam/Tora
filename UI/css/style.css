@@ -61,9 +61,8 @@ input[type=text], [type=password] {
   box-sizing: border-box;
 }
 
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
+.btn {
+  width: 49%;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -72,13 +71,25 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.green-bg-color {
+  background-color: #4CAF50;
+}
+
+.green-bg-color:hover {
   background-color: #45a049;
+}
+
+.blue-bg-color {
+  background-color: #00c4ff;
+}
+
+.blue-bg-color:hover {
+  background-color: #01b4ea;
 }
 
 .login {
   position: absolute;
-  top: 30%;
+  top: 10%;
   border-radius: 5px;
   padding: 20px;
 }
@@ -87,4 +98,9 @@ input[type=submit]:hover {
   position: absolute;
   bottom: 20px;
   transform: translate(450%, -50%);
+}
+
+h3 a {
+  text-decoration: none;
+  color: #333333;
 }
