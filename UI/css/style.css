@@ -80,10 +80,17 @@ input[type=text], [type=password] {
 }
 
 .blue-bg-color {
+  color: #3359df9e;
+}
+.blue-bg-color:hover {
+  color: darkblue;
+}
+
+.blue-color {
   background-color: #00c4ff;
 }
 
-.blue-bg-color:hover {
+.blue-color:hover {
   background-color: #01b4ea;
 }
 
