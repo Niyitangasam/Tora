@@ -1,0 +1,32 @@
+{
+  "name": "tora",
+  "version": "1.0.0",
+  "description": "Voting App",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --require @babel/core --require @babel/register ./server/server.js",
+    "dev": "nodemon --exec babel-node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niyitangasam/Tora.git"
+  },
+  "author": "Riders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niyitangasam/Tora/issues"
+  },
+  "homepage": "https://github.com/Niyitangasam/Tora#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  }
+}
