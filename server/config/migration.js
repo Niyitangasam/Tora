@@ -71,9 +71,9 @@ const Candidates = async () => {
     const query = `CREATE TABLE IF NOT EXISTS candidates
     (
       id SERIAL NOT NULL UNIQUE, 
-      office_id INTEGER REFERENCES  offices(id_office) ON DELETE CASCADE,
-      party_id INTEGER REFERENCES parties(id_party) ON DELETE CASCADE,
-      user_id INTEGER REFERENCES users(id_user) ON DELETE CASCADE,
+      office_id INTEGER REFERENCES  offices(id) ON DELETE CASCADE,
+      party_id INTEGER REFERENCES parties(id) ON DELETE CASCADE,
+      user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
       PRIMARY KEY (user_id ,office_id)
     );`;
     await client.query(query);
@@ -91,9 +91,9 @@ const Votes = async () => {
     (
    id  SERIAL NOT NULL,
    createdOn  Date ,
-   createdBy  INTEGER REFERENCES users(id_user) ON DELETE CASCADE,
-   office  INTEGER REFERENCES offices(id_office) ON DELETE CASCADE,
-   candidate INTEGER REFERENCES candidates(id_candidate) ON DELETE CASCADE,
+   createdBy  INTEGER REFERENCES users(id) ON DELETE CASCADE,
+   office  INTEGER REFERENCES offices(id) ON DELETE CASCADE,
+   candidate INTEGER REFERENCES candidates(id) ON DELETE CASCADE,
    PRIMARY KEY (office ,createdBy)
     );`;
     await client.query(query);
