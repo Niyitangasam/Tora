@@ -15,8 +15,8 @@
         <input type="text" id="login_email" name="login_email" placeholder="Your email">
         <label class="text-black">Password</label>
         <input type="password" id="login_password" name="login_password" placeholder="Your password">
-        <input type="submit" class="btn green-bg-color" value="Login">
-        <input type="submit" class="btn blue-bg-color" value="Signup" onclick="auth()">
+        <input type="submit" class="btn green-bg-color" value="Login"><br><br>
+        <label class="text-black blue-bg-color" style="cursor: pointer;" onclick="auth()">Create Account</label>
     </div>
     <div class="login" id="signup" style="display:none;">
       <h3 class="text-black center"><a href="index.html">LOGO</a></h3>
@@ -30,9 +30,10 @@
         <input type="text" id="firstname" name="firstname" placeholder="Your email">
         <label class="text-black">Password</label>
         <input type="text" id="password" name="password" placeholder="Password">
-        <label class="text-black">Address</label>
-        <input type="text" id="Address" name="Address" placeholder="Address">
-        <input type="submit" class="btn blue-bg-color" value="Signup">
+        <label class="text-black">Phone Number</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+        <input type="submit" class="btn blue-color" value="Signup">
+        <input type="submit" class="btn green-bg-color" value="Login" onclick="login()">
     </div>
   </div>
 
