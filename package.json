@@ -5,9 +5,9 @@
   "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --require @babel/core --require @babel/register ./server/server.js",
+    "start": "babel-node ./server/server.js",
     "dev": "nodemon --exec babel-node ./server/server.js",
-    "migrate":"babel-node ./server/config/migration.js"
+    "migrate": "babel-node ./server/config/migration.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,8 @@
     "body-parser": "^1.18.3",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "moment": "^2.24.0",
     "nodemon": "^1.18.11",
     "pg": "^7.9.0"
   }
