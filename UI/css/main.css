@@ -23,7 +23,8 @@ html, body {
 
 .profilepic {
 	padding-top: 5%;
-	text-align: center;
+    text-align: center;
+    height: 35%;
 }
 
 .profilepic img {
@@ -36,10 +37,10 @@ html, body {
 }
 
 .side-menu ul li {
-	padding: 20px;
-	margin-bottom: 6px;
+	padding: 8px;
+	margin-bottom: 8px;
 	color: white;
-	font-weight: 60;
+	font-weight: 50;
 	border-left: solid 4px rgba(0, 0, 0, 0.1);
 	margin-left: 4px;
 	cursor: pointer;
@@ -69,7 +70,8 @@ hr {
 
 .footer {
 	width: 70%;
-	float: right;
+    float: right;
+    margin-top: 68%;
 }
 
 .footer p {
