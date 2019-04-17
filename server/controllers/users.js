@@ -18,4 +18,21 @@ const addUser = async (req, res) => {
   const issueToken = Helper.generateToken(AddUserQuery.result);
   return res.status(201).send({ status: 201, message: 'User added successfully', token: issueToken, data: AddUserQuery.result });
 };
-export default addUser;
+
+const loginUser = async (req, res) => {
+    const result = Helper.validateLogin(req.body);
+    if (result.error) {
+      return Helper.invalidDataMessage(res, result);
+    }
+  
+    const LoginUserQuery = new Users(req.body);
+    if (!await LoginUserQuery.loginUser()) {
+      return res.status(401)
+        .send({
+          status: 401, Error: "Invalid Username or Password",
+        });
+    }
+    const issueToken = Helper.generateToken(LoginUserQuery.result);
+    return res.status(201).send({ status: 201, message: 'Welcome to Tora App', token: issueToken});
+  };
+export { addUser, loginUser };
