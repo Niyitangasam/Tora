@@ -16,7 +16,25 @@ class Helper {
         }
         return res.status(422).send({ status: 422, Error: errors });
       }
-
+    static name(input, required) {
+        if (!input && !required) {
+          return {
+            isValid: true,
+          };
+        }
+        if (input.match(/[a-z]{2}/i) && !input.match(/[0-9!$%*|}{:><?~`_&#^=]/)) {
+          return {
+            isValid: true,
+          };
+        }
+        return {
+          isValid: false,
+    
+          error: 'Please enter valid characters! Only alphabetic characters allowed.!!',
+    
+    
+        };
+      }
 }
 
 export default Helper;
