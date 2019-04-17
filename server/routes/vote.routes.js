@@ -1,6 +1,6 @@
 import express from 'express';
 
-import saveVote from '../controllers/voteController.js';
+import saveVote from '../controllers/vote.controller';
 
 const router = express.Router();
 
