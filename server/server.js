@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import voteRoutes from './routes/voteRoutes';
-import parties from './routes/parties';
+import parties from './routes/parties.routes';
 import voteRoutes from './routes/vote.routes';
 import officeRoutes from './routes/office.routes';
 
