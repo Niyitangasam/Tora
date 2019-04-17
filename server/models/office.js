@@ -24,6 +24,4 @@ class Office {
   }
 }
 
-const office = new Office();
-
-export default office;
+export default Office;
