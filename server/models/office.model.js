@@ -11,6 +11,7 @@ class Office {
     const {
         type, name,
     } = this.data;
+
     const values = [type, name];
 
     try {
@@ -34,6 +35,17 @@ class Office {
         }
       }
       this.result = dataToReturn;
+       return true;
+    } catch (error) {
+      this.error = error;
+      return false;
+    }
+  }
+
+  async findAll() {
+    try {
+      const { rows } = await dbCon.query('SELECT * FROM offices', []);
+      this.result = rows;
       return true;
     } catch (error) {
       this.error = error;
