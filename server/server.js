@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import voteRoutes from './routes/voteRoutes';
+import userRoutes from './routes/users';
 const app = express();
 
 
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.use('/api/v1/votes', voteRoutes);
+app.use('/api/v1/auth', userRoutes);
 
 app.use('*', (req, res) => res.status(404).send({
   status: 404,
