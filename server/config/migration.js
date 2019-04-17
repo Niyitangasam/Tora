@@ -3,7 +3,7 @@ import dbCon from './connection';
 const dropAllTables = async () => {
   const client = await dbCon.connect();
   try {
-    const dropTables = 'DROP TABLE IF EXISTS votes, candidates, petitions, parties, offices, users';
+    const dropTables = 'DROP TABLE IF EXISTS votes, candidates, parties, offices, users';
     await client.query(dropTables);
   } catch (error) {
     throw error;
