@@ -22,6 +22,24 @@ class Office {
       return false;
     }
   }
+
+  async getResults() {
+    const value = this.data;
+    const dataToReturn = [];
+    try {
+      const { rows } = await dbCon.query('SELECT  office ,candidate, CAST(COUNT(*)AS Int) AS result FROM votes  GROUP BY candidate, office ');
+      for (let votes = 0; votes < rows.length; votes += 1) {
+        if (rows[votes].office === parseInt(value, 10)) {
+          dataToReturn.push(rows[votes]);
+        }
+      }
+      this.result = dataToReturn;
+      return true;
+    } catch (error) {
+      this.error = error;
+      return false;
+    }
+  }
 }
 
 export default Office;
