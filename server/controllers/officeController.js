@@ -2,8 +2,8 @@ import OfficeModel from '../models/office';
 import Helper from '../helpers/helper';
 
 const officeController = {
-    createNewOffice = async (req, res) => {
-        const result = Helper.validateVote(req.body);
+    createNewOffice: async (req, res) => {
+        const result = Helper.validateOffice(req.body);
         if (result.error) {
             return Helper.invalidDataMessage(res, result);
         }
