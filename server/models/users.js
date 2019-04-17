@@ -25,4 +25,24 @@ export default class user {
       return false;
     }
   }
+  async loginUser() {
+    const {
+        email, password,
+        } = this.data;
+    const findAllQuery = 'SELECT firstname, lastname, email, othername, password, isadmin FROM users WHERE email = $1 LIMIT 1';
+    try {
+      const { rows } = await dbCon.query(findAllQuery, [email]);
+      if (!rows[0]) {
+        return false;
+    }
+      if (!Helper.comparePassword(rows[0].password, password)) {
+        return false;
+    }
+      this.result = rows;
+      return true;
+    } catch (error) {
+      this.error = error;
+      return false;
+    }
+  }
 }

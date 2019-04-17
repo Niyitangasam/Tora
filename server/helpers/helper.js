@@ -79,6 +79,20 @@ class Helper {
         });
         return Joi.validate(candidate, schema);
       }
+      static comparePassword(passwordHash, password) {
+      const comparedPassword = bcrypt.compareSync(password, passwordHash);
+      return comparedPassword;
+      } 
+      static validateLogin(user) {
+        const schema = Joi.object().keys({
+          email: Joi.string().trim().email({
+            minDomainAtoms: 2,
+        }).required(),
+          password: Joi.string().min(8).required(),
+        })
+    
+        return Joi.validate(user, schema);
+      }   
 
 }
 
