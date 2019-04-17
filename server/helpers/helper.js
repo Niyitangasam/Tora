@@ -3,8 +3,8 @@ import Joi from 'joi';
 class Helper {
   static validateOffice(office) {
     const officeKeys = Joi.object().keys({
-      type: Joi.required(),
-      name: Joi.required(),
+      type: Joi.string().min(3).max(30).required(),
+      name: Joi.string().min(3).max(30).required(),
     })
 
     return Joi.validate(office, officeKeys);
