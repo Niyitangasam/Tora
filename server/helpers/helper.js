@@ -40,6 +40,7 @@ class Helper {
       static hashPassword(password) {
         const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(8));
         return hashedPassword;
+      }
 
     static name(input, required) {
         if (!input && !required) {
