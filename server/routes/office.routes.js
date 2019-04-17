@@ -1,6 +1,6 @@
 import express from 'express';
 
-import officeController from '../controllers/officeController';
+import officeController from '../controllers/office.controller';
 
 const router = express.Router();
 

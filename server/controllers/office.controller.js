@@ -1,4 +1,4 @@
-import OfficeModel from '../models/office';
+import OfficeModel from '../models/office.model';
 import Helper from '../helpers/helper';
 
 const officeController = {

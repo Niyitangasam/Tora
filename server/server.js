@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import voteRoutes from './routes/voteRoutes';
-import officeRoutes from './routes/officeRoutes';
+import voteRoutes from './routes/vote.routes';
+import officeRoutes from './routes/office.routes';
 const app = express();
 
 
