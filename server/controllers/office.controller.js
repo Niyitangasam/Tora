@@ -1,5 +1,4 @@
 import OfficeModel from '../models/office.model';
-import Helper from '../helpers/helper';
 
 const officeController = {
     getOfficesResult: async (req, res) => {
@@ -13,11 +12,6 @@ const officeController = {
         return res.status(200).send({ status: 200, data: getResultQuery.result });
       },
     createNewOffice: async (req, res) => {
-        const result = Helper.validateOffice(req.body);
-        if (result.error) {
-            return Helper.invalidDataMessage(res, result);
-        }
-
         const newOffice = new OfficeModel(req.body);
         if (!await newOffice.createOffice()) {
             return res.status(422).send({
