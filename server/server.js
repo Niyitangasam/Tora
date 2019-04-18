@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
+import userRoutes from './routes/users';
 import candidates from './routes/candidates';
 import parties from './routes/parties.routes';
 import voteRoutes from './routes/vote.routes';
@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.use('/api/v1/votes', voteRoutes);
+app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1', candidates);
 app.use('/api/v1/parties', parties);
 app.use('/api/v1/offices', officeRoutes);
-
 
 
 app.use('*', (req, res) => res.status(404).send({

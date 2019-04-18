@@ -7,6 +7,8 @@ const router = express.Router();
 router.post('/', Parties.createParty);
 router.get('/', Parties.allParties);
 router.patch('/:id', Parties.editParty);
+router.delete('/:partyId', Parties.deleteParty)
+
 
 
 export default router;
