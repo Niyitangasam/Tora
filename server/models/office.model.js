@@ -52,6 +52,18 @@ class Office {
       return false;
     }
   }
+
+  async findByName() {
+    const value = this.data;
+    try {
+      const { rows } = await dbCon.query('SELECT * FROM offices WHERE name=$1', [value]);
+      this.result = rows;
+      return true;
+    } catch (error) {
+      this.error = error;
+      return false;
+    }
+  }
 }
 
 export default Office;
