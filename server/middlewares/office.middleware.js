@@ -1,6 +1,14 @@
 import OfficeModel from '../models/office.model';
+import Helper from '../helpers/helper';
 
 const officeMiddleware = {
+    areAttibutesValid: (req, res, next) => {
+        const result = Helper.validateOffice(req.body);
+        if (result.error) {
+            return Helper.invalidDataMessage(res, result);
+        }
+        return next();
+    },
     isNameExist: async (req, res, next) => {
         const theOffice = new OfficeModel(req.body.name);
         if(! await theOffice.findByName()){
@@ -18,3 +26,5 @@ const officeMiddleware = {
         return next();
     }
 }
+
+export default officeMiddleware;
