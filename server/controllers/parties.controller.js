@@ -77,7 +77,6 @@ class Parties {
 
   static async deleteParty (req, res) {
     const { rows } = await db.query(`SELECT * FROM parties WHERE id = ${req.params.partyId}`);
-    console.log(rows);
     if(rows.length<=0){
       return res.status(404).send({status:404, message: `party ${req.params.partyId} does not exist`});
     }
