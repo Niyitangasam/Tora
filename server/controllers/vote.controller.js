@@ -1,7 +1,6 @@
 import Helper from '../helpers/helper';
 import ModelVote from '../models/vote.model';
 
-
 const saveVote = async (req, res) => {
   const result = Helper.validateVote(req.body);
   if (result.error) {
