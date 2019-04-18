@@ -20,11 +20,11 @@ class Parties {
     }
     const alreadyExist = "SELECT * FROM parties WHERE name=$1 ";
     const query = await db.query(alreadyExist, [req.body.name]);
-    if (query.rowCount>0){
-        return res.status(400).json({
-            status: 422,
-            error: 'party already registered',
-          });
+    if (query.rowCount > 0) {
+      return res.status(400).json({
+        status: 422,
+        error: 'party already registered',
+      });
     }
     const text = `INSERT INTO
             parties("name", "hqaddress", "logourl")
@@ -74,7 +74,58 @@ class Parties {
       });
     }
   }
+  static async editParty(req, res) {
+    const checkInputs = [];
+    if (!req.body.name || !req.body.hqaddress) {
+      return res.status(400).json({
+        status: 400,
+        error: 'Provide name and HQ address',
+      });
+    }
+    checkInputs.push(Helper.name(req.body.name, true));
+    checkInputs.push(Helper.name(req.body.hqaddress, true));
 
+
+    for (let i = 0; i < checkInputs.length; i += 1) {
+      if (checkInputs[i].isValid === false) {
+        return res.status(400).json({
+          status: 400,
+          error: checkInputs[i].error,
+        });
+      }
+    }
+    let queryParties = `SELECT * FROM parties WHERE id=$1`
+    let queryParty = await db.query(queryParties, [req.params.id]);
+    console.log(queryParty)
+    if (!queryParty.rows[0]) {
+      return res.status(404).send({
+        status: 404,
+        message: 'Party not found'
+      })
+    }
+    try {
+      const values = [req.body.name, req.params.id]
+      const updateQuery = "UPDATE parties SET name=$1 WHERE id=$2 returning * ";
+      const updatedRow = await db.query(updateQuery, values);
+
+      if (!updatedRow.rows) {
+        res.status(500).send({
+          status: 500,
+          error: 'Party not updated',
+        });
+      }
+
+      return res.status(200).send({
+        status: 200,
+        data: updatedRow.rows[0]
+      });
+    } catch (error) {
+      res.status(500).send({
+        status: 500,
+        error: error,
+      });
+    }
+  }
   static async deleteParty (req, res) {
     const { rows } = await db.query(`SELECT * FROM parties WHERE id = ${req.params.partyId}`);
     if(rows.length<=0){
@@ -90,6 +141,7 @@ class Parties {
       return res.status(404).send({status:404, message: error});
     }
   }
+
 
 }
 export default Parties;
