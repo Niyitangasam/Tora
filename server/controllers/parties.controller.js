@@ -57,6 +57,7 @@ class Parties {
 
   // Get all Parties
   static async allParties(req, res) {
+    console.log(req.body)
     try {
       const {
         rows,
