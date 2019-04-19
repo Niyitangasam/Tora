@@ -6,7 +6,12 @@ class Parties {
   // newParty
   static async createParty(req, res) {
     const checkInputs = [];
-
+    if(!req.body.name || req.body.hqaddress || req.body.logourl){
+      return res.status(400).send({
+        status: 400,
+        error: 'Enter all party information'
+      })
+    }
     checkInputs.push(Helper.name(req.body.name, true));
     checkInputs.push(Helper.name(req.body.hqaddress, true));
 
@@ -58,19 +63,22 @@ class Parties {
   // Get all Parties
   static async allParties(req, res) {
     try {
-      const {
-        rows,
-      } = await db.query('SELECT * FROM parties');
-      if (rows.length > 0) {
-        return res.status(200).json({
-          status: 200,
-          data: rows,
+      const { rows } = await db.query('SELECT * FROM parties');
+      // console.log(rows)
+      if (!rows.length) {
+        return res.status(404).json({
+          status: 404,
+          error: 'No party found',
         });
       }
+      return res.status(200).json({
+        status: 200,
+        data: rows,
+      });
     } catch (error) {
-      return res.status(400).json({
-        status: 400,
-        error: 'party not found!',
+      return res.status(500).json({
+        status: 500,
+        error: 'Service not available!',
       });
     }
   }
