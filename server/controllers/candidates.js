@@ -2,6 +2,30 @@ import Helper from '../helpers/helper';
 import candidates from '../models/candidates';
 import dbCon from '../config/connection';
 
+const saveCandidate = async (req, res) => {
+    if (!req.user.role) {
+        return res.status(401).send({
+            status: 401,
+            error: 'This is for admin',
+        });
+    }
+    const candidate = {
+        officeId: req.params.officeId,
+        partyId: req.body.partyId,
+        userId: req.body.userId
+    };
+
+    const result = Helper.validateCandidate(candidate);
+    if(result.error){
+        return Helper.invalidDataMessage(res, result);
+    }
+
+    const createCandidate = new candidates(candidate);
+    if(!await createCandidate.createcandidate()){
+        return res.status(404).send({
+            status: 404, error: createCandidate.error.detail,
+        });
+      
 const candidat = {
     async saveCandidate(req, res) {
         if(req.user.role !== true){
