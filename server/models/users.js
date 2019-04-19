@@ -29,7 +29,7 @@ export default class user {
     const {
         email, password,
         } = this.data;
-    const findAllQuery = 'SELECT firstname, lastname, email, othername, password, isadmin FROM users WHERE email = $1 LIMIT 1';
+    const findAllQuery = 'SELECT id, firstname, lastname, email, othername, password, isadmin FROM users WHERE email = $1 LIMIT 1';
     try {
       const { rows } = await dbCon.query(findAllQuery, [email]);
       if (!rows[0]) {
