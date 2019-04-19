@@ -6,7 +6,12 @@ class Parties {
   // newParty
   static async createParty(req, res) {
     const checkInputs = [];
-
+    if(!req.body.name || req.body.hqaddress || req.body.logourl){
+      return res.status(400).send({
+        status: 400,
+        error: 'Enter all party information'
+      })
+    }
     checkInputs.push(Helper.name(req.body.name, true));
     checkInputs.push(Helper.name(req.body.hqaddress, true));
 
