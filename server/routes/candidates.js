@@ -5,5 +5,7 @@ import Auth from '../middlewares/auth';
 const router = express.Router();
 
 router.post('/candidate/:officeId/register', Auth.verifyToken, candidates);
+router.post('/candidate/:officeId/register', Auth.verifyToken, candidates.saveCandidate);
+router.get('/candidates/:partyId', Auth.verifyToken, candidates.partyCandidate);
 
 export default router;
