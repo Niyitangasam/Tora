@@ -2,6 +2,12 @@ import Helper from '../helpers/helper';
 import candidates from '../models/candidates';
 
 const saveCandidate = async (req, res) => {
+    if (!req.user.role) {
+        return res.status(401).send({
+            status: 401,
+            error: 'This is for admin',
+        });
+    }
     const candidate = {
         officeId: req.params.officeId,
         partyId: req.body.partyId,
