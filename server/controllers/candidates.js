@@ -1,7 +1,7 @@
 import Helper from '../helpers/helper';
 import candidates from '../models/candidates';
 import dbCon from '../config/connection';
-
+      
 const candidat = {
     async saveCandidate(req, res) {
         if(req.user.role !== true){
