@@ -41,26 +41,14 @@ class Helper {
     const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(8));
     return hashedPassword;
   }
-
-  static name(input, required) {
-    if (!input && !required) {
-      return {
-        isValid: true,
-      };
-    }
-    if (input.match(/[a-z]{2}/i) && !input.match(/[0-9!$%*|}{:><?~`_&#^=]/)) {
-      return {
-        isValid: true,
-      };
-    }
-    return {
-      isValid: false,
-
-      error: 'Please enter valid characters! Only alphabetic characters allowed.!!',
-
-
-    };
+  static validateParty(party){
+    const partyKeys = Joi.object().keys({
+      name: Joi.string().min(3).max(30).required().trim(),
+      hqaddress: Joi.string().min(3).max(30).required(),
+    })
+    return Joi.validate(party, partyKeys);
   }
+
 
   static validateOffice(office) {
     const officeKeys = Joi.object().keys({

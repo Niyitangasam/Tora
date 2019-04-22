@@ -5,24 +5,22 @@ import Helper from '../helpers/helper';
 class Parties {
   // newParty
   static async createParty(req, res) {
-    const checkInputs = [];
-    if(!req.body.name || req.body.hqaddress || req.body.logourl){
+    if (!req.body.name || !req.body.hqaddress || !req.body.logourl) {
       return res.status(400).send({
         status: 400,
         error: 'Enter all party information'
       })
     }
-    checkInputs.push(Helper.name(req.body.name, true));
-    checkInputs.push(Helper.name(req.body.hqaddress, true));
-
-    for (let i = 0; i < checkInputs.length; i += 1) {
-      if (checkInputs[i].isValid === false) {
-        return res.status(400).json({
-          status: 400,
-          error: checkInputs[i].error,
-        });
-      }
+    const party = {
+      name: req.body.name,
+      hqaddress: req.body.hqaddress
     }
+
+    const result = Helper.validateParty(party);
+    if (result.error) {
+      return Helper.invalidDataMessage(res, result);
+    }
+
     const alreadyExist = "SELECT * FROM parties WHERE name=$1 ";
     const query = await db.query(alreadyExist, [req.body.name]);
     if (query.rowCount > 0) {
@@ -64,7 +62,6 @@ class Parties {
   static async allParties(req, res) {
     try {
       const { rows } = await db.query('SELECT * FROM parties');
-      // console.log(rows)
       if (!rows.length) {
         return res.status(404).json({
           status: 404,
@@ -83,22 +80,22 @@ class Parties {
     }
   }
 
-  static async deleteParty (req, res) {
+  static async deleteParty(req, res) {
     const { rows } = await db.query(`SELECT * FROM parties WHERE id = ${req.params.partyId}`);
-    if(rows.length<=0){
-      return res.status(404).send({status:404, message: `party ${req.params.partyId} does not exist`});
+    if (rows.length <= 0) {
+      return res.status(404).send({ status: 404, message: `party ${req.params.partyId} does not exist` });
     }
 
     const sql = `DELETE FROM parties WHERE id = ${req.params.partyId}`;
-    try{
+    try {
       await db.query(sql);
-      return res.status(202).send({status:202, message: `party number ${req.params.partyId} is deleted`});
+      return res.status(202).send({ status: 202, message: `party number ${req.params.partyId} is deleted` });
     }
-    catch(error){
-      return res.status(404).send({status:404, message: error});
+    catch (error) {
+      return res.status(404).send({ status: 404, message: error });
     }
   }
-  
+
   static async editParty(req, res) {
     const checkInputs = [];
     if (!req.body.name || !req.body.hqaddress) {
@@ -151,7 +148,7 @@ class Parties {
       });
     }
   }
- 
+
 
 
 }
