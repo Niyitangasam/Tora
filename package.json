@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run migrate && babel-node ./server/server.js",
+    "start": "babel-node ./server/server.js",
     "dev": "nodemon --exec babel-node ./server/server.js",
     "migrate": "babel-node ./server/config/migration.js"
   },
